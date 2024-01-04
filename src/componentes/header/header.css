@@ -1,0 +1,68 @@
+.divContainerNav > img {
+  width: 50px;
+}
+.divContainerNav {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 15%;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 50px;
+  padding: 20px;
+}
+.navIndex {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.formSerch > img {
+  width: 25px;
+}
+.formSerch {
+  display: flex;
+  align-items: center;
+  background-color: #eaeaea;
+  width: 50%;
+  height: 44px;
+  padding-left: 20px;
+  border-radius: 22px;
+}
+.formSerch > input {
+  border: none;
+  background-color: #eaeaea;
+  outline: none;
+  padding-left: 10px;
+  font-size: medium;
+  width: 90%;
+}
+.serchButton {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 40px;
+  background-color: rgb(190, 28, 28);
+  color: white;
+}
+.notification {
+  height: 37px;
+}
+.divIndex > img {
+  width: 45px;
+  cursor: pointer;
+}
+.divIndex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 16%;
+  gap: 12px;
+}
+.buscarMas {
+  width: 120px;
+  color: white;
+  background-color: black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
