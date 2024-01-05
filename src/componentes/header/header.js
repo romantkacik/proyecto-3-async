@@ -1,5 +1,6 @@
 import './header.css'
 import { createButton } from '../button/button'
+export const formSearch = document.createElement('form')
 
 export const headerContainer = () => {
   const divContainerNav = document.createElement('div')
@@ -14,15 +15,15 @@ export const headerContainer = () => {
   ${createButton({ texto: 'Crear' })}
   ${createButton({ texto: 'Analytic' })}
   `
-  const formSerch = document.createElement('form')
-  formSerch.className = 'formSerch'
-  formSerch.action = ''
+  const formSearch = document.createElement('form')
+  formSearch.className = 'formSerch'
+  formSearch.action = ''
   const lupa = document.createElement('img')
   lupa.src = './assets/lupa.png'
-  const serch = document.createElement('input')
-  serch.type = 'serch'
-  serch.className = 'serch'
-  serch.placeholder = 'Que quieres buscar ?'
+  const search = document.createElement('input')
+  search.type = 'search'
+  search.className = 'search'
+  search.placeholder = 'Que quieres buscar ?'
   const serchButton = document.createElement('button')
   serchButton.className = 'serchButton'
   serchButton.textContent = 'Buscar'
@@ -32,10 +33,10 @@ export const headerContainer = () => {
 
   divContainerNav.appendChild(logo)
   divContainerNav.appendChild(navIndex)
-  formSerch.appendChild(lupa)
-  formSerch.appendChild(serch)
-  formSerch.appendChild(serchButton)
-  divContainerNav.appendChild(formSerch)
+  formSearch.appendChild(lupa)
+  formSearch.appendChild(search)
+  formSearch.appendChild(serchButton)
+  divContainerNav.appendChild(formSearch)
 
   const divIndex = document.createElement('div')
   divIndex.className = 'divIndex'
