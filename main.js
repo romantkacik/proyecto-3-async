@@ -1,64 +1,23 @@
 import './style.css'
-import { headerContainer, formSearch } from './src/componentes/header/header'
+import { headerContainer } from './src/componentes/header/header'
+import { searchCards } from './src/componentes/cards/cards'
+
+export const keyWord = ''
+export let page = 1
+export const accesKey = 'f71Npw_KP6sDCHZnZlPAuddGYIGb_i3sGIWy4vfaMKo'
 
 const divApp = document.querySelector('#app')
+export const boxResults = document.createElement('section')
+boxResults.classList.add('boxResults')
 
 const headerContent = headerContainer()
+const cardsContainer = searchCards()
 divApp.appendChild(headerContent)
+divApp.appendChild(boxResults)
+divApp.appendChild(cardsContainer)
 
-let keyWord = ''
-let page = 1
-const accesKey = 'f71Npw_KP6sDCHZnZlPAuddGYIGb_i3sGIWy4vfaMKo'
-
-async function searchCards() {
-  keyWord = formSearch.value
-  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${accesKey}`
-
-  console.log('URL de la API:', url)
-
-  try {
-    const response = await fetch(url)
-
-    if (response.ok) {
-      const data = await response.json()
-      console.log('Respuesta de la API:', data)
-
-      const cardsSearch = document.createElement('section')
-      cardsSearch.className = 'cardsSearch'
-
-      if (page === 1) {
-        cardsSearch.innerHTML = ''
-      }
-
-      const results = data.results
-
-      results.map((result) => {
-        const imagen = document.createElement('img')
-        imagen.src = result.urls.small
-
-        const imagenLink = document.createElement('a')
-        imagenLink.href = result.links.html
-        imagenLink.target = '_blank'
-
-        imagenLink.appendChild(imagen)
-        cardsSearch.appendChild(imagenLink)
-      })
-
-      // Agrega la sección de tarjetas al DOM
-      divApp.appendChild(cardsSearch)
-    } else {
-      console.error('Error en la respuesta de la API:', response.status)
-    }
-  } catch (error) {
-    console.error('Error en la búsqueda de tarjetas:', error)
-  }
-}
-
-// Llama a searchCards cuando se carga la página
-searchCards()
-
-formSearch.addEventListener('submit', (e) => {
-  e.preventDefault()
-  page = 1
-  searchCards()
-})
+// formSearch.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   page = 1
+//   searchCards()
+// })
