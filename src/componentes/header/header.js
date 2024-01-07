@@ -21,7 +21,7 @@ export const headerContainer = () => {
   formSearch.action = ''
   const lupa = document.createElement('img')
   lupa.src = './assets/lupa.png'
-  const boxSearch = document.createElement('input')
+  let boxSearch = document.createElement('input')
   boxSearch.type = 'search'
   boxSearch.className = 'boxSearch'
   boxSearch.placeholder = 'Que quieres buscar ?'
