@@ -1,63 +1,32 @@
 // main.js
 import './style.css'
-import { headerContainer, formSearch, boxSearch } from './src/componentes/header/header'
-import { displayImages } from './src/componentes/cards/cards'
+import { headerContainer, formSearch, inputSearch } from './src/componentes/header/header'
+import { getPhotosByTerm, getRandomPhotos } from './src/componentes/cards/cards'
 
-const divApp = document.querySelector('#app')
-const headerContent = headerContainer()
+document.addEventListener('DOMContentLoaded', function () {
+  const divApp = document.querySelector('#app')
 
-divApp.appendChild(headerContent)
+  // Crea el contenedor de las tarjetas y lo añade al DOM
+  const sectionCards = document.createElement('section')
+  sectionCards.classList.add('sectionCards')
+  divApp.appendChild(sectionCards)
 
-const cardsContainer = document.createElement('section')
-cardsContainer.classList.add('cardsContainer')
-divApp.appendChild(cardsContainer)
+  // Crea el contenedor del encabezado y lo añade al DOM
+  const accesKey = 'dnz2GXzigR1OZz7pVgqABZ5ucEvzif-6fXObB3tn2v8'
 
-let keyWord = generateRandomKeyword() // Generamos una palabra clave aleatoria al cargar la página
-let page = 1
-const accesKey = 'f71Npw_KP6sDCHZnZlPAuddGYIGb_i3sGIWy4vfaMKo'
-let url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${accesKey}`
+  // Llama a la función para mostrar fotos aleatorias inicialmente
+  getRandomPhotos(accesKey, sectionCards)
 
-console.log('URL de la API:', url)
+  const headerContent = headerContainer(accesKey, sectionCards) // Pasa accesKey y sectionCards al encabezado
+  divApp.appendChild(headerContent)
 
-async function fetchData() {
-  try {
-    const response = await fetch(url)
-    const data = await response.json()
-    console.log('Datos obtenidos de la API:', data.results)
+  formSearch.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const keyword = inputSearch.value.trim()
 
-    // Llamamos a la función displayImages para mostrar las imágenes en las tarjetas.
-    displayImages(data.results)
-  } catch (error) {
-    console.error('Error al obtener datos de la API:', error)
-  }
-}
-
-// Función para generar una palabra clave aleatoria
-function generateRandomKeyword() {
-  const keywords = ['landscape', 'city', 'animals', 'nature', 'food', 'travel']
-  const randomIndex = Math.floor(Math.random() * keywords.length)
-  return keywords[randomIndex]
-}
-
-// Configurar el evento "Buscar Más" para obtener nuevas imágenes aleatorias
-const buscarMasButton = document.querySelector('.buscarMas')
-buscarMasButton.addEventListener('click', function () {
-  keyWord = generateRandomKeyword() // Generar una nueva palabra clave aleatoria
-  page = 1 // Restablecer la página a 1 al hacer clic en "Buscar Más"
-  url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${accesKey}`
-  fetchData()
-})
-
-// Llamada a la función fetchData para obtener datos al cargar la página
-fetchData()
-
-// Configurar el evento de búsqueda al enviar el formulario
-formSearch.addEventListener('submit', function (e) {
-  e.preventDefault()
-  keyWord = boxSearch.value.trim() // Obtener la palabra clave de la caja de búsqueda
-  if (keyWord !== '') {
-    page = 1 // Restablecer la página a 1 al realizar una búsqueda personalizada
-    url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${accesKey}`
-    fetchData()
-  }
+    if (keyword !== '') {
+      // Llama a la función para mostrar fotos según la búsqueda
+      getPhotosByTerm(accesKey, sectionCards, keyword)
+    }
+  })
 })

@@ -23,10 +23,10 @@
   gap: 10px;
   align-items: center;
 }
-.formSerch > img {
+.formSearch > img {
   width: 25px;
 }
-.formSerch {
+.formSearch {
   display: flex;
   align-items: center;
   background-color: #eaeaea;
@@ -35,7 +35,7 @@
   padding-left: 20px;
   border-radius: 22px;
 }
-.formSerch > input {
+.formSearch > input {
   border: none;
   background-color: #eaeaea;
   outline: none;
