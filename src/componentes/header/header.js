@@ -1,10 +1,11 @@
 // header.js
 import './header.css'
 import { createButton } from '../button/button'
-import { getPhotosByTerm } from '../cards/cards' // Asegúrate de importar la función
+import { getPhotosByTerm, getRandomPhotos } from '../cards/cards'
 
 export const formSearch = document.createElement('form')
 export const inputSearch = document.createElement('input')
+export const buscarMas = document.createElement('button')
 
 export const headerContainer = (accesKey, sectionCards) => {
   const divContainerNav = document.createElement('div')
@@ -74,6 +75,20 @@ export const headerContainer = (accesKey, sectionCards) => {
       // Llama a la función pasando las variables necesarias
       getPhotosByTerm(accesKey, sectionCards, keyword)
     }
+  })
+  buscarMas.addEventListener('click', (event) => {
+    event.preventDefault()
+    const keyword = inputSearch.value.trim()
+
+    if (keyword !== '') {
+      // Si hay un término de búsqueda, carga fotos con ese término
+      getPhotosByTerm(accesKey, sectionCards, keyword)
+    } else {
+      // Si no hay un término de búsqueda, carga fotos aleatorias
+      getRandomPhotos(accesKey, sectionCards)
+    }
+    // Hacer scroll al final de la página
+    window.scrollTo(0, document.body.scrollHeight)
   })
 
   return divContainerNav

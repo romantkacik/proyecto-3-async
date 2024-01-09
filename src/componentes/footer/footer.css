@@ -1,0 +1,24 @@
+footer > div > a > img {
+  width: 50px;
+}
+footer > div > a {
+  cursor: pointer;
+}
+footer > div {
+  display: flex;
+  padding-right: 10%;
+  gap: 50px;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+}
+footer > p {
+  padding-left: 10%;
+}
+.createBy {
+  font-family: monospace;
+}

@@ -71,5 +71,10 @@
   background-color: black;
   height: 40px;
   display: flex;
+  cursor: pointer;
+  border: none;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
