@@ -54,10 +54,11 @@
 .notification {
   height: 37px;
 }
-.divIndex > img {
-  width: 45px;
+.divIndex > a > img {
+  width: 38px;
   cursor: pointer;
 }
+
 .divIndex {
   display: flex;
   flex-direction: row;

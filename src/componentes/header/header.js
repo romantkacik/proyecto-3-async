@@ -48,24 +48,29 @@ export const headerContainer = (accesKey, sectionCards) => {
   formSearch.appendChild(inputSearch)
   formSearch.appendChild(serchButton)
   divContainerNav.appendChild(formSearch)
+  divContainerNav.appendChild(buscarMas)
 
   const divIndex = document.createElement('div')
   divIndex.className = 'divIndex'
 
+  const notificationLink = document.createElement('a')
   const notification = document.createElement('img')
   notification.src = './assets/campana.png'
-  notification.className = 'notification'
 
-  const message = document.createElement('img')
-  message.src = './assets/mensajes.png'
+  const messageLink = document.createElement('a')
+  const messageImg = document.createElement('img')
+  messageImg.src = './assets/mensajes.png'
 
-  const user = document.createElement('img')
-  user.src = './assets/user.jpeg'
+  const userLink = document.createElement('a')
+  const userImg = document.createElement('img')
+  userImg.src = './assets/user.jpeg'
 
-  divContainerNav.appendChild(buscarMas)
-  divIndex.appendChild(notification)
-  divIndex.appendChild(message)
-  divIndex.appendChild(user)
+  messageLink.appendChild(messageImg)
+  notificationLink.appendChild(notification)
+  userLink.appendChild(userImg)
+  divIndex.appendChild(notificationLink)
+  divIndex.appendChild(messageLink)
+  divIndex.appendChild(userLink)
   divContainerNav.appendChild(divIndex)
 
   formSearch.addEventListener('submit', (event) => {
