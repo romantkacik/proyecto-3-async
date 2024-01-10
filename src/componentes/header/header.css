@@ -3,8 +3,10 @@
 }
 .divContainerNav {
   display: flex;
+  flex-wrap: nowrap;
   box-sizing: border-box;
   width: 100%;
+  min-height: 80px;
   height: 15%;
   gap: 10px;
   align-items: center;
@@ -14,14 +16,19 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: white; /* Puedes ajustar el color de fondo según tu diseño */
-  z-index: 100; /* Asegura que el encabezado esté por encima de otros elementos */
+  background-color: white;
+  z-index: 100;
 }
 
 .navIndex {
   display: flex;
   gap: 10px;
   align-items: center;
+  width: 30%;
+  flex-grow: 1;
+}
+.navIndex > button {
+  width: fit-content;
 }
 .formSearch > img {
   width: 25px;
@@ -41,11 +48,11 @@
   outline: none;
   padding-left: 10px;
   font-size: medium;
-  width: 90%;
+  width: 100%;
 }
 .serchButton {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   height: 40px;
   background-color: rgb(190, 28, 28);
@@ -63,11 +70,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 16%;
+  padding-left: 5%;
   gap: 12px;
 }
 .buscarMas {
-  width: 120px;
+  width: 100px;
   color: white;
   background-color: black;
   height: 40px;
@@ -77,5 +84,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+}
+@media screen and (max-width: 975px) {
+  .divContainerNav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .buscarMas {
+    margin-left: 0%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .divContainerNav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .buscarMas {
+    margin-left: 0%;
+  }
+  .navIndex {
+    display: none;
+  }
 }

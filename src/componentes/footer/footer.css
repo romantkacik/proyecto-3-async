@@ -22,3 +22,18 @@ footer > p {
 .createBy {
   font-family: monospace;
 }
+
+@media screen and (max-width: 675px) {
+  .createBy {
+    font-size: 10px;
+  }
+  footer > div > a > img {
+    width: 25px;
+  }
+  footer > div {
+    gap: 25px;
+  }
+  footer > p {
+    padding-left: 4%;
+  }
+}
