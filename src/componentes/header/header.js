@@ -73,5 +73,28 @@ export const headerContainer = (accesKey, sectionCards) => {
   divIndex.appendChild(userLink)
   divContainerNav.appendChild(divIndex)
 
+  console.log(buscarMas)
+
+  buscarMas.addEventListener('click', (event) => {
+    console.log('api fotos')
+    event.preventDefault()
+    const sectionCards = document.querySelector('.sectionCards')
+    let page = 1
+
+    const keyword = inputSearch.value.trim()
+    const accesKey = 'dnz2GXzigR1OZz7pVgqABZ5ucEvzif-6fXObB3tn2v8'
+    if (keyword !== '') {
+      // Si hay un término de búsqueda, carga fotos con ese término
+      getPhotosByTerm(accesKey, sectionCards, keyword, page)
+      page++
+    } else {
+      // Si no hay un término de búsqueda, carga fotos aleatorias
+      getRandomPhotos(accesKey, sectionCards)
+    }
+
+    // Hacer scroll al final de la página
+    window.scrollTo(0, document.body.scrollHeight)
+  })
+
   return divContainerNav
 }

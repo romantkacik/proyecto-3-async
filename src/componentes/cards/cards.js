@@ -14,13 +14,15 @@ export const getRandomPhotos = (accesKey, sectionCards) => {
     })
     .catch((error) => console.error('Error fetching random photos:', error))
 }
-export const getPhotosByTerm = (accesKey, sectionCards, keyword) => {
-  const searchUrl = `https://api.unsplash.com/search/photos?page=&query=${keyword}&per_page=9&client_id=${accesKey}`
+
+export const getPhotosByTerm = (accesKey, sectionCards, keyword, page) => {
+  const searchUrl = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&per_page=9&client_id=${accesKey}`
 
   fetch(searchUrl)
     .then((res) => res.json())
     .then((res) => {
       sectionCards.innerHTML = ''
+      console.log(res.results)
 
       for (const photo of res.results) {
         const img = document.createElement('img')

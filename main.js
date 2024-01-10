@@ -40,18 +40,4 @@ document.addEventListener('DOMContentLoaded', function () {
       getPhotosByTerm(accesKey, sectionCards, keyword)
     }
   })
-  buscarMas.addEventListener('click', (event) => {
-    event.preventDefault()
-    const keyword = inputSearch.value.trim()
-
-    if (keyword !== '') {
-      // Si hay un término de búsqueda, carga fotos con ese término
-      getPhotosByTerm(accesKey, sectionCards, keyword)
-    } else {
-      // Si no hay un término de búsqueda, carga fotos aleatorias
-      getRandomPhotos(accesKey, sectionCards)
-    }
-    // Hacer scroll al final de la página
-    window.scrollTo(0, document.body.scrollHeight)
-  })
 })
