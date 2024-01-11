@@ -12,7 +12,7 @@ export const headerContainer = (accesKey, sectionCards) => {
   divContainerNav.className = 'divContainerNav'
 
   const logo = document.createElement('img')
-  logo.src = './src/componentes/assets/Pinterest-logo.png'
+  logo.src = './public/assets/Pinterest-logo.png'
   logo.className = 'logo'
 
   const navIndex = document.createElement('div')
@@ -27,7 +27,7 @@ export const headerContainer = (accesKey, sectionCards) => {
   formSearch.action = ''
 
   const lupa = document.createElement('img')
-  lupa.src = './src/componentes/assets/lupa.png'
+  lupa.src = './public/assets/lupa.png'
 
   inputSearch.type = 'text'
   inputSearch.className = 'inputSearch'
@@ -55,15 +55,15 @@ export const headerContainer = (accesKey, sectionCards) => {
 
   const notificationLink = document.createElement('a')
   const notification = document.createElement('img')
-  notification.src = './src/componentes/assets/campana.png'
+  notification.src = './public/assets/campana.png'
 
   const messageLink = document.createElement('a')
   const messageImg = document.createElement('img')
-  messageImg.src = './src/componentes/assets/mensajes.png'
+  messageImg.src = './public/assets/mensajes.png'
 
   const userLink = document.createElement('a')
   const userImg = document.createElement('img')
-  userImg.src = './src/componentes/assets/user.jpeg'
+  userImg.src = './public/assets/user.jpeg'
 
   messageLink.appendChild(messageImg)
   notificationLink.appendChild(notification)
