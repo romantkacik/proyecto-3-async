@@ -1,4 +1,6 @@
 // cards.js
+import './cards.css'
+
 export const getRandomPhotos = (accesKey, sectionCards) => {
   const randomUrl = `https://api.unsplash.com/photos/random?count=9&client_id=${accesKey}`
 
