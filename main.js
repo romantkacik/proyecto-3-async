@@ -1,11 +1,6 @@
 // main.js
 import './style.css'
-import {
-  headerContainer,
-  formSearch,
-  inputSearch,
-  buscarMas,
-} from './src/componentes/header/header'
+import { headerContainer, formSearch, inputSearch } from './src/componentes/header/header'
 import { getPhotosByTerm, getRandomPhotos } from './src/componentes/cards/cards'
 import { footerContainer } from './src/componentes/footer/footer'
 
