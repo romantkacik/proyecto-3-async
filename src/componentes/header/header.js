@@ -27,7 +27,7 @@ export const headerContainer = (accesKey, sectionCards) => {
   formSearch.action = ''
 
   const lupa = document.createElement('img')
-  lupa.src = './assets/lupa.png'
+  lupa.src = './public/assets/lupa.png'
 
   inputSearch.type = 'text'
   inputSearch.className = 'inputSearch'
@@ -55,15 +55,15 @@ export const headerContainer = (accesKey, sectionCards) => {
 
   const notificationLink = document.createElement('a')
   const notification = document.createElement('img')
-  notification.src = './assets/campana.png'
+  notification.src = './public/assets/campana.png'
 
   const messageLink = document.createElement('a')
   const messageImg = document.createElement('img')
-  messageImg.src = './assets/mensajes.png'
+  messageImg.src = './public/assets/mensajes.png'
 
   const userLink = document.createElement('a')
   const userImg = document.createElement('img')
-  userImg.src = './assets/user.jpeg'
+  userImg.src = './public/assets/user.jpeg'
 
   messageLink.appendChild(messageImg)
   notificationLink.appendChild(notification)
