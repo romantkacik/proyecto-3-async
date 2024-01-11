@@ -15,13 +15,13 @@ export const footerContainer = () => {
   const github = document.createElement('a')
   github.href = 'https://github.com/romantkacik/proyecto-3-async'
   const imgGithub = document.createElement('img')
-  imgGithub.src = './public/github.png'
+  imgGithub.src = './src/assets/github.png'
   github.appendChild(imgGithub)
 
   const linkedin = document.createElement('a')
   linkedin.href = 'https://www.linkedin.com/in/rom%C3%A1n-luciano-tkacik-b81881203/'
   const imgLinkedin = document.createElement('img')
-  imgLinkedin.src = './public/linkedin.png'
+  imgLinkedin.src = './src/assets/linkedin.png'
   linkedin.appendChild(imgLinkedin)
 
   linksDiv.appendChild(github)
