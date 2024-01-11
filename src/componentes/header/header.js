@@ -12,7 +12,7 @@ export const headerContainer = (accesKey, sectionCards) => {
   divContainerNav.className = 'divContainerNav'
 
   const logo = document.createElement('img')
-  logo.src = './src/assets/Pinterest-logo.png'
+  logo.src = './public/Pinterest-logo.png'
   logo.className = 'logo'
 
   const navIndex = document.createElement('div')
