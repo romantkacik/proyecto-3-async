@@ -44,3 +44,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.noResults {
+  font-size: 30px;
+  width: 500px;
+}

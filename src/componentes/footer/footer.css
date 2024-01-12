@@ -15,6 +15,9 @@ footer {
   justify-content: space-between;
   width: 100%;
   padding: 30px;
+  height: 10vh;
+  bottom: 0;
+  position: relative;
 }
 footer > p {
   padding-left: 10%;
